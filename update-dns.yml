@@ -1,0 +1,9 @@
+---
+- name: update servers and configure DNS
+  hosts: ubuntu
+  tasks:
+    - name: Configure DNS file
+      lineinfile:
+        path: /etc/resolv.conf
+        regexp: ^nameserver
+        line: nameserver 192.168.153.135
